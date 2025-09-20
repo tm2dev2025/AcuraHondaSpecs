@@ -1,0 +1,249 @@
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: Arial, Helvetica, sans-serif; 
+    background: #f9f9f9; 
+    color: #222; 
+}
+
+/* Header Section */
+header { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 16px 32px; 
+    background: #fff; 
+    border-bottom: 2px solid #ddd; 
+}
+
+.brand { display: flex; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+.brand img { 
+    height: 60px; 
+    width: auto; 
+}
+
+/* Nav Bar */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar a, .dropbtn {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 15px;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  color: #c00;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  color: #333;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.dropdown-content a:hover {
+  background: #f5f5f5;
+  color: #c00;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Active link */
+.navbar .active {
+  color: #c00;
+  border-bottom: 2px solid #c00;
+}
+
+/* Use above for navbar and dropdown styles */
+
+/* Hero */
+.hero { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 40px 32px; 
+    background: #eaeaea; 
+}
+
+.hero-text { 
+    max-width: 60%; 
+}
+
+.hero-text h2 { 
+    font-size: 32px; 
+    margin-bottom: 12px; 
+}
+
+.hero-text p { 
+    margin-bottom: 16px; 
+    line-height: 1.5; 
+}
+
+.hero-text .cta { 
+    background: #c00; 
+    color: #fff; 
+    padding: 12px 20px; 
+    border-radius: 6px; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+/* Engine Links */
+.engines { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 32px; gap: 20px; 
+}
+
+.card { 
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    border: 1px solid #aaaaaa; 
+    flex: 1; 
+}
+
+.card h3 { 
+    margin-bottom: 8px; 
+}
+
+.card p { 
+    margin-bottom: 12px; 
+    line-height: 1.4; 
+}
+
+.card .btn { 
+    display: inline-block; 
+    background: #c00; 
+    color: #fff; 
+    padding: 8px 14px; 
+    border-radius: 6px; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+/* Updates & Reminder Section */
+.info-section { 
+    padding: 32px;
+    background: #fff; 
+    border-top: 2px solid #ddd; 
+    border-bottom: 2px solid #ddd; 
+}
+
+.info-section h3 { 
+    margin-bottom: 12px; 
+}
+.info-section p { 
+    line-height: 1.5; 
+}
+
+/* About Page */
+.indented-paragraph {
+  margin-bottom: 30px;
+}
+
+.about-page {
+  padding: 32px;
+}
+
+.about-page .hero {
+  background: #eaeaea;
+  padding: 40px 32px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+}
+
+.about-page .hero-text h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #c00;
+}
+
+.about-page .hero-text p {
+  line-height: 1.6;
+}
+
+.about-page .info-section {
+  background: #fff;
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.about-page .info-section h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #c00;
+  padding-bottom: 6px;
+}
+
+.about-page .info-section p {
+  line-height: 1.6;
+}
+
+
+/* Footer */
+footer { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 16px 32px; 
+    background: #fff; 
+    border-top: 2px solid #ddd; 
+    font-size: 14px; 
+    color: #555; 
+}
+
+footer a { 
+    margin-right: 12px; 
+    text-decoration: none; 
+    color: #555; 
+}
+
+footer a:hover { 
+    color: #c00; 
+}
