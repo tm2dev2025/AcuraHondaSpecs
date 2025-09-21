@@ -28,8 +28,9 @@ This project adheres to AcuraHondaSpecs.
 
 ---
 
-## [1.1.0] - 2025-08-10
+## [1.1.0] - 2025-09-10
 ### INITIAL LAUNCH – ISSUES CAUSING THE CHANGE
 - First launch, resembling mock-up of wireframe
 - No additional pages
 - Outdated look
+
