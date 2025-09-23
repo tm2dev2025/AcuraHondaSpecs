@@ -44,10 +44,20 @@
   .spec-text h3, .spec-text h2 { margin-left: 18px; }
   footer { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px; }
 
-  /* Tables become horizontally scrollable on very small screens */
-  table { display: block; overflow-x: auto; white-space: nowrap; }
-  table th, table td { padding: 10px; }
-  table td:first-child, table th:first-child { padding-left: 12px; }
+  /* Tables become stacked, label/value pairs on very small screens */
+  table { width: 100%; border: 0; border-collapse: collapse; }
+  /* Hide header cells on mobile; we'll surface labels via data-label */
+  table th { display: none; }
+  table tr { display: block; margin-bottom: 12px; border-bottom: 1px solid #eee; }
+  table td { display: flex; justify-content: space-between; padding: 10px 12px; border: 0; }
+  table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #333;
+    margin-right: 12px;
+    flex-basis: 50%;
+  }
+  table td:last-child { text-align: right; }
 }
 
 * { 
