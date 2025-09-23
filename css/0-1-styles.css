@@ -36,7 +36,7 @@
 @media (max-width: 480px) {
   header { padding: 10px 12px; }
   .brand img { height: 40px; }
-  .navbar a, .dropbtn { padding: 6px 8px; font-size: 14px; }
+  .navbar a, .dropbtn { padding: 6px 8px; font-size: 16px; }
   .hero { padding: 18px 12px; }
   .hero-text h2 { font-size: 20px; }
   .card { padding: 14px; }
@@ -111,7 +111,7 @@ header {
   border: none;
   cursor: pointer;
   padding: 8px 12px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
@@ -230,6 +230,24 @@ a:focus, .dropbtn:focus {
 }
 
 /* Torque Specs Page Tables */
+/* Adding a container for tables so they work on mobile */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table td:first-child, 
+table th:first-child {
+  padding-left: 16px; /* remove huge fixed padding */
+}
+
+table td:last-child, 
+table th:last-child {
+  padding-right: 16px;
+}
+
+/* origninal table styles */
+
 table {
   width: 95%;
   margin: 0 auto 32px auto;
@@ -252,7 +270,7 @@ table th {
   background: #f5f5f5;
   color: #333;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 16px;
   text-align: left;
 }
 
@@ -286,7 +304,7 @@ table tr:hover td {
 table td em {
   color: #c00;
   font-style: normal;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -438,7 +456,7 @@ footer {
     padding: 16px 32px; 
     background: #fff; 
     border-top: 2px solid #ddd; 
-    font-size: 14px; 
+    font-size: 16px; 
     color: #555; 
 }
 
