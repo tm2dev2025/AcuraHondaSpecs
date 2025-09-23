@@ -441,6 +441,42 @@ footer a {
     color: #555; 
 }
 
+/* Hamburger menu styles (mobile-only behavior) */
+#hamburger-btn {
+  display: none; /* shown under mobile media queries */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+#hamburger-btn .bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #333;
+  margin: 4px 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* When header has .nav-open, show nav as a vertical list */
+@media (max-width: 768px) {
+  #hamburger-btn { display: block; }
+  .navbar { display: none; width: 100%; }
+  header.nav-open .navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #fff;
+    width: 100%;
+    padding: 12px 16px 18px 16px;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+  header.nav-open #hamburger-btn .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  header.nav-open #hamburger-btn .bar:nth-child(2) { opacity: 0; }
+  header.nav-open #hamburger-btn .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+}
+
 footer a:hover { 
     color: #c00; 
 }
