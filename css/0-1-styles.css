@@ -1,5 +1,4 @@
 /* Start of Responsive Design */
-/* Start of Responsive Design */
 /* Tablet and smaller */
 @media (max-width: 768px) {
   header {
@@ -33,7 +32,7 @@
   table td:last-child, table th:last-child { padding-right: 16px; }
 }
 
-/* Small phones */
+/* Adding small phones support */
 @media (max-width: 480px) {
   header { padding: 10px 12px; }
   .brand img { height: 40px; }
@@ -46,7 +45,7 @@
 
   /* Tables become stacked, label/value pairs on very small screens */
   table { width: 100%; border: 0; border-collapse: collapse; }
-  /* Hide header cells on mobile; we'll surface labels via data-label */
+  /* Hide header cells on mobile; making surface labels via data-label */
   table th { display: none; }
   table tr { display: block; margin-bottom: 12px; border-bottom: 1px solid #eee; }
   table td { display: flex; justify-content: space-between; padding: 10px 12px; border: 0; }
@@ -198,8 +197,6 @@ a:focus, .dropbtn:focus {
     text-decoration: none; 
     font-weight: bold; 
 }
-
-/* Above is good for combining */
 
 /* Rework for combining */
 .spec-text h3 {
@@ -451,7 +448,7 @@ footer a {
     color: #555; 
 }
 
-/* Hamburger menu styles (mobile-only behavior) */
+/* Hamburger menu styles for mobile-only */
 #hamburger-btn {
   display: none; /* shown under mobile media queries */
   background: none;
