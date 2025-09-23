@@ -94,16 +94,9 @@ header {
   display: block;
 }
 
-/* Active link */
-.navbar .active {
-  color: #c00;
-  border-bottom: 2px solid #c00;
-}
-
-/* Use above for navbar and dropdown styles */
+/* Above is good for combining */
 
 /* Hero Class Section */
-
 .hero { 
     display: flex; 
     justify-content: space-between; 
@@ -135,9 +128,10 @@ header {
     font-weight: bold; 
 }
 
-/* Torque Specs Page Tables */
-/* Need to add class */
-h3 {
+/* Above is good for combining */
+
+/* Rework for combining */
+.spec h3 {
   position: relative;
   margin: 32px 0 24px;
   font-size: 26px;
@@ -147,7 +141,7 @@ h3 {
   margin-left: 50px;
 }
 
-h2 {
+.spec h2 {
   position: relative;
   margin: 32px 0 24px;
   font-size: 22px;
@@ -157,7 +151,7 @@ h2 {
   margin-left: 50px; /* trying to put heading inline with box */
 }
 
-h2::after {
+.spec h2::after {
   content: "";
   display: block;
   height: 3px;
