@@ -1,108 +1,57 @@
-/* Start of Responsive Design */
-/* Tablet and smaller */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 16px;
-  }
-  .brand img { height: 48px; }
-  .navbar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding-left: 0;
-  }
-  .hero {
-    padding: 28px 16px;
-  }
-  .hero-text { max-width: 100%; }
-  .hero-text h2 { font-size: 26px; }
-  .engines {
-    flex-direction: column;
-    padding: 16px;
-  }
-  .card {
-    margin-bottom: 20px;
-  }
-  .development-page, .about-page, .info-section { padding: 20px; }
-  table { width: 100%; margin: 0 0 20px 0; }
-  table td:first-child, table th:first-child { padding-left: 16px; width: 60%; }
-  table td:last-child, table th:last-child { padding-right: 16px; }
+/* Base Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Adding small phones support */
-@media (max-width: 480px) {
-  header { padding: 10px 12px; }
-  .brand img { height: 40px; }
-  .navbar a, .dropbtn { padding: 6px 8px; font-size: 16px; }
-  .hero { padding: 18px 12px; }
-  .hero-text h2 { font-size: 20px; }
-  .card { padding: 14px; }
-  .spec-text h3, .spec-text h2 { margin-left: 18px; }
-  footer { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px; }
-
-  /* Tables become stacked, label/value pairs on very small screens */
-  table { width: 100%; border: 0; border-collapse: collapse; }
-  /* Hide header cells on mobile; making surface labels via data-label */
-  table th { display: none; }
-  table tr { display: block; margin-bottom: 12px; border-bottom: 1px solid #eee; }
-  table td { display: flex; justify-content: space-between; padding: 10px 12px; border: 0; }
-  table td::before {
-    content: attr(data-label);
-    font-weight: 700;
-    color: #333;
-    margin-right: 12px;
-    flex-basis: 50%;
-  }
-  table td:last-child { text-align: right; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #222;
 }
 
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
+/* Accessibility: Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  z-index: 1000;
+}
+.skip-link:focus {
+  top: 0;
 }
 
-body { 
-    font-family: Arial, Helvetica, sans-serif; 
-    background: #f9f9f9; 
-    color: #222; 
+/* Header & Nav */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: #fff;
+  border-bottom: 2px solid #ddd;
 }
 
-/* Header Section */
-header { 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    padding: 16px 32px; 
-    background: #fff; 
-    border-bottom: 2px solid #ddd; 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand img {
+  height: 60px;
+  width: auto;
 }
 
-.brand { display: flex; 
-    align-items: center; 
-    gap: 12px; 
-}
-
-.brand img { 
-    height: 60px; 
-    width: auto; 
-}
-
-/* Nav Bar */
 .navbar {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
-.navbar .active {
-  color: #c00;
-  border-bottom: 2px solid #c00;
-}
-
 .navbar a, .dropbtn {
   text-decoration: none;
   color: #333;
@@ -113,362 +62,44 @@ header {
   padding: 8px 12px;
   font-size: 16px;
 }
-
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar .active {
+  color: #c00;
+  border-bottom: 2px solid #c00;
+}
+.navbar a:hover, .dropdown:hover .dropbtn,
+a:focus, .dropbtn:focus {
   color: #c00;
   background: #f0f0f0;
   border-radius: 4px;
+  outline: 2px solid #c00;
+  outline-offset: 2px;
 }
 
-/* Dropdown - within navbar */
-.dropdown {
-  position: relative;
-}
-
+/* Dropdowns */
+.dropdown { position: relative; }
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 100%; left: 0;
   background: #fff;
   border: 1px solid #ddd;
   min-width: 180px;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
 .dropdown-content a {
   display: block;
   padding: 10px 14px;
   color: #333;
   text-decoration: none;
-  font-weight: normal;
 }
+.dropdown-content a:hover { background: #f5f5f5; color: #c00; }
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content { display: block; }
 
-.dropdown-content a:hover {
-  background: #f5f5f5;
-  color: #c00;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Accessibility: show dropdown on focus */
-.dropdown:focus-within .dropdown-content { 
-  display: block;
-}
-
-a:focus, .dropbtn:focus {
-  outline: 2px solid #c00;
-  outline-offset: 2px;
-}
-
-/* Use above for navbar and dropdown styles */
-
-/* Hero Text */
-.hero { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 40px 32px; 
-    background: #eaeaea; 
-}
-
-.hero-text { 
-    max-width: 60%; 
-}
-
-.hero-text h2 { 
-    font-size: 32px; 
-    margin-bottom: 12px; 
-}
-
-.hero-text p { 
-    margin-bottom: 16px; 
-    line-height: 1.5; 
-}
-
-.hero-text .cta { 
-    background: #c00; 
-    color: #fff; 
-    padding: 12px 20px; 
-    border-radius: 6px; 
-    text-decoration: none; 
-    font-weight: bold; 
-}
-
-/* Rework for combining */
-.spec-text h3 {
-  position: relative;
-  margin: 32px 0 24px;
-  font-size: 26px;
-  color: #c00;
-  padding-bottom: 2px;
-  text-align: left;
-  margin-left: 50px;
-}
-
-.spec-text h2 {
-  position: relative;
-  margin: 32px 0 24px;
-  font-size: 22px;
-  color: #c00;
-  padding-bottom: 8px;
-  text-align: left;
-  margin-left: 50px; /* shifts heading */
-}
-
-.spec-text h2::after {
-  content: "";
-  position: absolute;
-  left: 0;        /* start under the text */
-  bottom: 0;
-  width: 97%;    /* underline matches text width */
-  height: 3px;
-  background: #333;
-}
-
-/* Torque Specs Page Tables */
-/* Adding a container for tables so they work on mobile */
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-}
-
-table td:first-child, 
-table th:first-child {
-  padding-left: 16px; /* remove huge fixed padding */
-}
-
-table td:last-child, 
-table th:last-child {
-  padding-right: 16px;
-}
-
-/* origninal table styles */
-
-table {
-  width: 95%;
-  margin: 0 auto 32px auto;
-  border-collapse: collapse;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  table-layout: fixed; 
-}
-
-table th, table td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #eee;
-  vertical-align: middle;
-}
-
-table th {
-  background: #f5f5f5;
-  color: #333;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: left;
-}
-
-/* First column: components */
-table td:first-child, 
-table th:first-child {
-  width: 60%;
-  text-align: left;
-  padding-left: 150px;
-}
-
-/* Second column: torque specs (center aligned) */
-table td:last-child, 
-table th:last-child {
-  width: 40%;
-  text-align: center;
-  padding-right: 150px;
-}
-
-/* Row striping */
-table tr:nth-child(even) td {
-  background: #fafafa;
-}
-
-/* Hover effect */
-table tr:hover td {
-  background: #f0f0f0;
-}
-
-/* Highlight notes inside torque spec */
-table td em {
-  color: #c00;
-  font-style: normal;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* Development Page */
-.development-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 60vh;
-  padding: 32px;
-}
-
-.dev-box {
-  background: #fff;
-  padding: 40px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  max-width: 600px;
-}
-
-.dev-box h2 {
-  font-size: 26px;
-  margin-bottom: 16px;
-  color: #c00;
-}
-
-.dev-box p {
-  margin-bottom: 20px;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.dev-box .btn {
-  display: inline-block;
-  background: #c00;
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-.dev-box .btn:hover {
-  background: #a00;
-}
-
-/* Engine Links and cards */
-.engines { 
-    display: flex; 
-    justify-content: space-between; 
-    padding: 32px; gap: 20px; 
-}
-
-.card { 
-    background: #fff; 
-    padding: 20px; 
-    border-radius: 8px; 
-    border: 1px solid #aaaaaa; 
-    flex: 1; 
-}
-
-.card h3 { 
-    margin-bottom: 8px; 
-}
-
-.card p { 
-    margin-bottom: 12px; 
-    line-height: 1.4; 
-}
-
-.card .btn { 
-    display: inline-block; 
-    background: #c00; 
-    color: #fff; 
-    padding: 8px 14px; 
-    border-radius: 6px; 
-    text-decoration: none; 
-    font-weight: bold; 
-}
-
-/* Updates & Reminder Section */
-.info-section { 
-    padding: 32px;
-    background: #fff; 
-    border-top: 2px solid #ddd; 
-    border-bottom: 2px solid #ddd; 
-}
-
-.info-section h3 { 
-    margin-bottom: 12px; 
-}
-.info-section p { 
-    line-height: 1.5; 
-}
-
-/* About Page */
-.indented-paragraph {
-  margin-bottom: 30px;
-}
-
-.about-page {
-  padding: 32px;
-}
-
-.about-page .hero {
-  background: #eaeaea;
-  padding: 40px 32px;
-  border-radius: 8px;
-  margin-bottom: 32px;
-}
-
-.about-page .hero-text h2 {
-  font-size: 28px;
-  margin-bottom: 12px;
-  color: #c00;
-}
-
-.about-page .hero-text p {
-  line-height: 1.6;
-}
-
-.about-page .info-section {
-  background: #fff;
-  padding: 24px;
-  margin-bottom: 24px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.about-page .info-section h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  border-bottom: 3px solid #c00;
-  padding-bottom: 6px;
-}
-
-.about-page .info-section p {
-  line-height: 1.6;
-}
-
-
-/* Footer */
-footer { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 16px 32px; 
-    background: #fff; 
-    border-top: 2px solid #ddd; 
-    font-size: 16px; 
-    color: #555; 
-}
-
-footer a { 
-    margin-right: 12px; 
-    text-decoration: none; 
-    color: #555; 
-}
-
-/* Hamburger menu styles for mobile-only */
+/* Hamburger Menu (Mobile) */
 #hamburger-btn {
-  display: none; /* shown under mobile media queries */
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
@@ -482,26 +113,149 @@ footer a {
   margin: 4px 0;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
+header.nav-open .navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fff;
+  width: 100%;
+  padding: 12px 16px 18px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+header.nav-open #hamburger-btn .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+header.nav-open #hamburger-btn .bar:nth-child(2) { opacity: 0; }
+header.nav-open #hamburger-btn .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-/* When header has .nav-open, show nav as a vertical list */
-@media (max-width: 768px) {
-  #hamburger-btn { display: block; }
-  .navbar { display: none; width: 100%; }
-  header.nav-open .navbar {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    background: #fff;
-    width: 100%;
-    padding: 12px 16px 18px 16px;
-    border-radius: 6px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  }
-  header.nav-open #hamburger-btn .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-  header.nav-open #hamburger-btn .bar:nth-child(2) { opacity: 0; }
-  header.nav-open #hamburger-btn .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 32px;
+  background: #eaeaea;
+}
+.hero-text .cta { background: #c00; color: #fff; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; }
+.hero-text { max-width: 60%; }
+.hero-text h2 { font-size: 32px; margin-bottom: 12px; }
+.hero-text p { margin-bottom: 16px; line-height: 1.5; }
+
+/* Spec */
+.spec-text h2 { position: relative; margin: 32px 0 24px; font-size: 22px; color: #c00; padding-bottom: 8px; text-align: left; margin-left: 50px; }
+.spec-text h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 97%; height: 3px; background: #333; }
+.spec-text h3 { position: relative; margin: 32px 0 24px; font-size: 26px; color: #c00; padding-bottom: 2px; text-align: left; margin-left: 50px; }
+
+
+/* Tables */
+.table-container { width: 100%; overflow-x: auto; }
+table {
+  width: 95%;
+  margin: 0 auto 32px;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+table th, table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+table th {
+  background: #f5f5f5;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: left;
+}
+table tr:nth-child(even) td { background: #fafafa; }
+table tr:hover td { background: #f0f0f0; }
+table td em {
+  color: #c00;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-footer a:hover { 
-    color: #c00; 
+/* Cards */
+.engines {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 32px;
+}
+.card {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+.card h3 { margin-bottom: 8px; }
+.card p { margin-bottom: 12px; }
+.card .btn {
+  display: inline-block;
+  background: #c00;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #fff;
+  border-top: 2px solid #ddd;
+  font-size: 14px;
+  color: #555;
+}
+footer a { margin-right: 12px; text-decoration: none; color: #555; }
+footer a:hover { color: #c00; }
+
+/* Updates & Reminder Section */
+.info-section {  padding: 32px; background: #fff;  border-top: 2px solid #ddd;  border-bottom: 2px solid #ddd; }
+.info-section h3 {  margin-bottom: 12px; }
+.info-section p { line-height: 1.5; }
+
+/* About Page */
+.indented-paragraph { margin-bottom: 30px; }
+.about-page { padding: 32px; }
+.about-page .hero { background: #eaeaea; padding: 40px 32px; border-radius: 8px; margin-bottom: 32px; }
+.about-page .hero-text h2 { font-size: 28px; margin-bottom: 12px; color: #c00; }
+.about-page .hero-text p { line-height: 1.6; }
+.about-page .info-section { background: #fff; padding: 24px; margin-bottom: 24px; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+.about-page .info-section h2 { font-size: 22px; margin-bottom: 10px; border-bottom: 3px solid #c00; padding-bottom: 6px; }
+.about-page .info-section p { line-height: 1.6; }
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  #hamburger-btn { display: block; }
+  .navbar { display: none; }
+  .hero { padding: 28px 16px; }
+  .hero-text { max-width: 100%; }
+  .engines { flex-direction: column; padding: 16px; }
+  .card { margin-bottom: 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 18px 12px; }
+  .hero-text h2 { font-size: 22px; }
+  .card { padding: 14px; }
+  footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+  table th { display: none; }
+  table tr { display: block; margin-bottom: 12px; border-bottom: 1px solid #eee; }
+  table td { display: flex; justify-content: space-between; border: 0; }
+  table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #333;
+    margin-right: 12px;
+  }
 }
