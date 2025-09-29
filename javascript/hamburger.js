@@ -1,4 +1,4 @@
-// Simple hamburger toggle: toggles .nav-open on the header # credit to W3Schools
+// # credit to W3Schools
 document.addEventListener('DOMContentLoaded', function () {
   var btn = document.getElementById('hamburger-btn');
   if (!btn) return;
