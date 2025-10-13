@@ -41,6 +41,8 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none; /* removes underline in href */
+  color: inherit;  /* ensures text color matches surrounding text*/
 }
 .brand img {
   height: 60px;
