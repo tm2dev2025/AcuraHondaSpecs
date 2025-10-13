@@ -129,6 +129,9 @@ header.nav-open #hamburger-btn .bar:nth-child(1) { transform: translateY(6px) ro
 header.nav-open #hamburger-btn .bar:nth-child(2) { opacity: 0; }
 header.nav-open #hamburger-btn .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
+ul { padding: 8px;margin: 0; }
+ul li { margin-left: 10px; /* added li spacing */}
+
 /* Hero */
 .hero {
   display: flex;
